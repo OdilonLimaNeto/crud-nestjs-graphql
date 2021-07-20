@@ -5,6 +5,8 @@ import ListUsersResolver from './resolvers/list-users.resolver';
 import CreateUserService from './services/create-user.service';
 import ListUsersService from './services/list-users.service';
 import UsersRepository from './repositories/users-repository';
+import DeleteUserService from './services/delete-user.service';
+import DeleteUserResolver from './resolvers/delete-user.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UsersRepository])],
@@ -13,6 +15,8 @@ import UsersRepository from './repositories/users-repository';
     CreateUserResolver,
     ListUsersService,
     ListUsersResolver,
+    DeleteUserService,
+    DeleteUserResolver,
   ],
 })
 export class UserModule {}
