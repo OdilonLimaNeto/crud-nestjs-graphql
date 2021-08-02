@@ -3,17 +3,15 @@ import { IsOptional } from 'class-validator';
 
 @InputType()
 class CreateUserInput {
-  @IsOptional()
   @Field()
-  name?: string;
+  name: string;
+
+  @Field()
+  email: string;
 
   @IsOptional()
   @Field()
-  email?: string;
-
-  @IsOptional()
-  @Field()
-  password?: string;
+  password: string;
 }
 
 export default CreateUserInput;
