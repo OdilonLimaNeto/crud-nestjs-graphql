@@ -11,10 +11,7 @@ class CreateUserService {
   async create(input: CreateUserInput): Promise<User> {
     const isHashPassword = await bcrypt.hash(input.password, 8);
     input.password = isHashPassword;
-    const userToCreated = this.usersRepository.create(input);
-    const createdUser = await this.usersRepository.save(userToCreated);
-
-    return createdUser;
+    return this.usersRepository.createUser(input);
   }
 }
 
